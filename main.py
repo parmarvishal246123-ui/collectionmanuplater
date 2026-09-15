@@ -72,13 +72,14 @@ while True:
         
 
         
-    # elif choice==5:
-    #     print("Display Subjects offered")
-    #     s=set()
-    #     for std in student_list:
-    #         for subject in std["subject"]:
-
-    #         s.add(subject)
+    elif choice==5:
+        print("Display Subjects offered")
+        s=set()
+        for std in student_list:
+            for subject in std["subject"]:
+                s.add(subject)
+            for subject in s:
+                print (s)
 
 
                

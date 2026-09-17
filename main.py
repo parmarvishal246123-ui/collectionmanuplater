@@ -21,17 +21,17 @@ while True:
           name = input("Enter Student Name:- ")
           age = int(input("Enter Student Age:- "))
           grade = input("Enter Student Grade:- ")
-          dob = int(input("Enter Student dob (YYYY-MM-DD):  "))
+          dob = input("Enter Student dob (YYYY-MM-DD):  ")
           subjects = input("Enter subjects (comma-separeted): ")
 
           id_dob=(id,dob)
           sub=set(subjects.split(","))
 
-          dict={"Name":name,
-                "Age":age,
-                "Grade":grade,
-                "Subjects":sub,
-                "Info":id_dob
+          dict={"name":name,
+                "age":age,
+                "grade":grade,
+                "subjects":sub,
+                "info":id_dob
                 }
           students.append(dict)
           print("Student Added Succesfully")
@@ -41,7 +41,7 @@ while True:
             print()
             if len(students) != 0:
               for std in students:
-                  print(f"Student ID is: {std['Info'][0]} | Student Name is: {std['Name']} | Student Age is: {std['Age']} | Student Grade is: {std['Grade']} | Student Subjects are: {(std['Subjects'])} | Student DOB is: {std['Info'][1]}")
+                  print(f"Student ID is: {std['info'][0]} | Student Name is: {std['name']} | Student Age is: {std['age']} | Student Grade is: {std['grade']} | Student Subjects are: {(std['subjects'])} | Student DOB is: {std['info'][1]}")
 
 
             else:
@@ -51,7 +51,7 @@ while True:
             print()
             id=int(input("Enter Student ID:"))
             for std in students:
-                if std["Info"][0] == id:
+                if std["info"][0] == id:
                     while True:
                         print("1.Update Name")
                         print("2.Update Age")
@@ -63,19 +63,19 @@ while True:
 
                         if ch == 1:
                             name= input("Enter New Name: ")
-                            std["Name"]=name
+                            std["name"]=name
 
                         elif ch == 2:
                             age= int(input("Enter New Age: "))
-                            std["Age"]=age
+                            std["age"]=age
 
                         elif ch == 3:
                             sub= input("Enter New Subjects: ")
-                            std["Subjects"]=set(sub.split(","))
+                            std["subjects"]=set(sub.split(","))
 
                         elif ch == 4:
                             grade= input("Enter New Grade: ")
-                            std["Grade"]=grade
+                            std["grade"]=grade
 
                         elif ch == 5:
                             print("STOP!")
@@ -92,7 +92,7 @@ while True:
             if len(students) != 0:
                 id = int(input("Enter Student ID: "))
                 for std in students:
-                    if std["Info"][0] == id:
+                    if std["info"][0] == id:
                         students.remove(std)
                         print("Student Removed Succesfully.")
 
@@ -100,7 +100,7 @@ while True:
       elif choice == 5:
         a=set()
         for std in students:
-            for sub in std["Subjects"]:
+            for sub in std["subjects"]:
                 a.add(sub)
         print()
         for sub in a:

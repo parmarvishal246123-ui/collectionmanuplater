@@ -246,7 +246,6 @@ The project can be improved in the future by adding:
 
 ## Author
   parmar vishal
-T---
 
 ### License
 

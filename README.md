@@ -74,7 +74,7 @@ After running the program, select an option from the menu:
 ```text
 
 ├── main.py
-├──output.png
+├── output.png
 ├── README.md
 
 ```
